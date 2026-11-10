@@ -199,7 +199,7 @@ export default function App() {
             {selection?.file.name ?? "Откройте документ для просмотра"}
           </p>
         </div>
-        <label className="open-button">
+        {/* <label className="open-button">
           Открыть PDF
           <input
             type="file"
@@ -209,7 +209,7 @@ export default function App() {
               event.target.value = "";
             }}
           />
-        </label>
+        </label> */}
       </header>
       {selection && (
         <section className="contract-info" aria-labelledby="contract-title">
