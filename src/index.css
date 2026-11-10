@@ -1,0 +1,38 @@
+﻿:root { font-family: Arial, sans-serif; color: #252638; background: #f1f2f6; font-synthesis: none; }
+* { box-sizing: border-box; }
+/* Keep the viewport width fixed while PDF pages add vertical overflow. */
+html { overflow-y: scroll; }
+body { margin: 0; min-width: 320px; }
+main { min-height: 100dvh; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 32px; background: white; border-bottom: 1px solid #e0e2eb; }
+.heading { min-width: 0; }
+h1 { font-size: 20px; margin: 0 0 6px; }
+header p { color: #707386; font-size: 14px; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+button, .open-button { font: inherit; cursor: pointer; border-radius: 10px; }
+.open-button { position: relative; flex-shrink: 0; padding: 12px 18px; background: #283593; color: white; font-weight: 600; font-size: 14px; }
+.open-button input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.open-button:focus-within, button:focus-visible { outline: 3px solid #8495ed; outline-offset: 3px; }
+.toolbar { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; padding: 16px; }
+.controls { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+button { min-width: 40px; min-height: 40px; padding: 8px 12px; border: 1px solid #d8dbe6; background: white; color: #252638; }
+button:hover:not(:disabled) { background: #e7eafd; }
+button:disabled { opacity: .4; cursor: default; }
+.status { text-align: center; min-height: 24px; color: #707386; font-size: 14px; padding: 0 16px; }
+.document { overflow: auto; padding: 16px; text-align: center; }
+canvas { display: block; margin: 0 auto 24px; background: white; box-shadow: 0 4px 24px #25263818; }
+.empty { min-height: 65vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; text-align: center; }
+.file-icon { border: 2px solid #b4bce5; border-radius: 14px; padding: 30px 18px; color: #283593; font-weight: bold; }
+h2 { font-size: 24px; margin: 24px 0 0; }
+.empty p, .empty small { color: #707386; line-height: 1.6; }
+.error { text-align: center; color: #b42318; }
+.contract-info { margin: 24px 32px 8px; padding: 24px; background: white; border: 1px solid #e0e2eb; border-radius: 16px; }
+.contract-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.contract-heading h2 { margin: 0; font-size: 18px; }
+.demo-badge { padding: 5px 9px; border-radius: 6px; background: #eef0fb; color: #46539b; font-size: 12px; }
+.contract-details { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin: 24px 0 0; }
+.contract-details dt { margin-bottom: 8px; color: #707386; font-size: 13px; }
+.contract-details dd { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+.contract-details dd span { display: block; margin-top: 4px; color: #707386; font-size: 13px; font-weight: 400; }
+@media (max-width: 900px) { .contract-details { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .contract-info { margin: 16px 16px 8px; padding: 18px; } .contract-details { grid-template-columns: 1fr; gap: 18px; } }
+@media (max-width: 540px) { header { padding: 18px 16px; gap: 12px; } h1 { font-size: 18px; } .open-button { padding: 12px; } .toolbar { gap: 12px; } }
